@@ -9,13 +9,14 @@ import java.util.*;
 class Main {
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
-    System.out.println("How many players are in this Easter egg hung? Enter a positive whole number:");
+    System.out.println("How many players are in this Easter egg hunt? Enter a positive whole number:");
     int num = s.nextInt();
 
     ArrayList<Player> players = new ArrayList<Player>();
 
-    for(int i=o; i<num; i++) {
+    for(int i=0; i<num; i++) {
       players.add(new Player());
+    }
 
     System.out.println("We have added " + num + " players to this hunt. Let's fund some eggs!");
 
@@ -40,7 +41,7 @@ class Main {
 
     public static void recap(ArrayList<Player> thePlayers) {
       for(int i=0; i<thePlayers.size(); i++) {
-        System.out.println("\nPlayer " + i + " found " + thePlayers.get(i).getNumEggs() + " eggs");
+        System.out.println("\nPlayer " + i + " found " + thePlayers.get(i).getNumberEggs() + " eggs");
         thePlayers.get(i).printBasket();
       }
     }
@@ -50,19 +51,25 @@ class Main {
       int mostEggsNumber = 0;
 
       for(int i=0; i<thePlayers.size(); i++) {
-        if(thePlayers.get(i).getNumEggs() > mostEggsNumber) {
-          mostEggsNumber = thePlayers.ger(i).getNumEggs();
+        if(thePlayers.get(i).getNumberEggs() > mostEggsNumber) {
+          mostEggsNumber = thePlayers.get(i).getNumberEggs();
           mostEggsPlayer = i;
         }
       }
 
-      System.out.println("Player " + mostEggsPlayer + " found the most eggs, with " + mostEggsNumber + " eggs!");
+      System.out.println("\nPlayer " + mostEggsPlayer + " found the most eggs, with " + mostEggsNumber + " eggs!");
 
       int[] colors = new int [4];
       for(int i=0; i<thePlayers.size(); i++) {
-        for(int b=0; b<thePlayers.get(i).getBasket().get(b).getColor().equals("blue")) colors[0]++;
-        for(int b=0; b<thePlayers.get(i).getBasket().get(b).getColor().equals("pink")) colors[1]++;
-        for(int b=0; b<thePlayers.get(i).getBasket().get(b).getColor().equals("yellow")) colors[2]++;for(int b=0; b<thePlayers.get(i).getBasket().get(b).getColor().equals("green")) colors[3]++;       
+        for(int b=0; b<thePlayers.get(i).getNumberEggs(); b++){
+           if(thePlayers.get(i).getBasket().get(b).getColor().equals("blue"))
+            colors[0]++;  
+          if(thePlayers.get(i).getBasket().get(b).getColor().equals("pink"))
+            colors[1]++;
+          if(thePlayers.get(i).getBasket().get(b).getColor().equals("yellow"))
+            colors[2]++;
+          if(thePlayers.get(i).getBasket().get(b).getColor().equals("green"))
+            colors[3]++; 
       }
     }
     

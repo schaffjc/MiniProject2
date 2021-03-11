@@ -24,7 +24,7 @@ class Egg {
       Random r = new Random();
       String eggColors[] = {"blue", "pink", "yellow", "green"};
       int color = r.nextInt(4);
-      return eggColors[eggColor];
+      return eggColors[color];
   }
 
 /**
@@ -35,7 +35,7 @@ class Egg {
       Random r = new Random();
       String eggContents[] = {"Cadbury Egg", "Reese's Egg", "pink Starburst", "yellow Peep", "25 cents", "50 cents", "one dollar"};
       int contents = r.nextInt(7);
-      return eggContents[eggContent];
+      return eggContents[contents];
   }
 
 /**
@@ -56,6 +56,6 @@ class Egg {
 
 //prints out what the random color and contents are for the egg
   public void printEgg() {
-    System.out.println(color + " egg contains" + contents);
+    System.out.println(color + " egg contains " + contents);
   }
 }
