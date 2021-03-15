@@ -1,7 +1,7 @@
 /**
-* This class determines the color and contents of the eggs 
+* This class determines the eggs that the players find and creates their basket
 * @author Jamie Schaffer, Mariam Bahassi, Martin Manevski, Nicholas Warren
-* @version 3/11/2021
+* @version 3/15/2021
 */
 
 import java.util.*;
