@@ -13,13 +13,31 @@ class Main {
     Scanner s = new Scanner(System.in);
    //allows user to enter in the number of players and stores it in a scanner
     System.out.println("How many players are in this Easter egg hunt? Enter a positive whole number:");
-    int num = s.nextInt();
-
+    boolean isInv = true;
+    int num = 0;
+    //checks to see if the user's number is negative or positive
+    while(isInv){
+      try{
+        num = s.nextInt();
+        isInv = false;
+      } catch(InputMismatchException e){
+        System.out.println("This number is not valid, please enter a new number:");
+        s.next();
+      }
+    }
+  //let's the user know their input was negative
+  while (num < 0) {
+    Scanner n = new Scanner(System.in);
+    System.out.println("This number is negative, please enter a positive number:");
+    num = n.nextInt();
+    }
+    //adds new players to the ArayList depending on the number that the user entered in    
     ArrayList<Player> players = new ArrayList<Player>();
-    //adds new players to the ArayList depending on the number that the user entered in
+
     for(int i=0; i<num; i++) {
       players.add(new Player());
     }
+
 
     System.out.println("We have added " + num + " players to this hunt. Let's fund some eggs!");
 
